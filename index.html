@@ -43,20 +43,17 @@
                 // Auto-rotate
                 globeEl.current.controls().autoRotate = true;
                 globeEl.current.controls().autoRotateSpeed = 0.3;
-          
-                globeEl.current.pointOfView({ altitude: 4 }, 5000);
             }, []);
     
             return <Globe
                 ref={globeEl}
-                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+                globeImageUrl="https://uploads-ssl.webflow.com/610c58f79b8b3be8877e39ad/612ce30ac16fe7e81e60d7dd_fs-globe-image-3.jpeg"
         
                 pointsData={cities}
                 pointLat="lat"
                 pointLng="lon"
                 pointAltitude={0.1}
-                pointRadius={0.9}
+                pointRadius={1.2}
                 pointColor={d => d["city-status"] ? d["city-status"] : "#ffffff"}
                 pointResolution={24}
                 pointLabel={getTooltip}
