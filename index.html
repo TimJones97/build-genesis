@@ -45,8 +45,8 @@
             pointsData={cities}
             pointLat="lat"
             pointLng="lon"
-            pointAltitude={0.005}
-            pointRadius={0.7}
+            pointAltitude={0.1}
+            pointRadius={0.9}
             pointColor={d => d["city-status"] ? d["city-status"] : "#ffffff"}
             pointResolution={24}
             pointLabel={getTooltip}
@@ -65,7 +65,7 @@
 
             ringsData={[shieldRing]}
             ringAltitude={0.05}
-            ringColor={() => 'lightblue'}
+            ringColor={() => "#75FA70"}
             ringMaxRadius={180}
             ringPropagationSpeed={20}
             ringRepeatPeriod={200}
