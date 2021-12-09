@@ -2,7 +2,6 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Courier New', Courier, monospace;
         }
     </style>
 
@@ -34,7 +33,7 @@
         }, []);
 
         const getTooltip = d => `
-            <div style="text-align: center">
+            <div style="text-align: center; font-size: 24px; font-family: 'Courier New', Courier, monospace;">
             <div><b>build_${d.name}</b></div>
             </div>
         `;
@@ -50,15 +49,16 @@
             pointRadius={0.7}
             pointColor={d => d["city-status"] ? d["city-status"] : "#ffffff"}
             pointResolution={24}
-    
+            pointLabel={getTooltip}
+
             labelsData={cities}
             labelLat="lat"
             labelLng="lon"
             labelAltitude={0.005}
-            labelDotRadius={0.12}
+            labelDotRadius={0.7}
             labelDotOrientation={() => 'bottom'}
             labelColor={"#ffffff"}
-            labelText="name"
+            labelText=""
             labelSize={0.15}
             labelResolution={1}
             labelLabel={getTooltip}
