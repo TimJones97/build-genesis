@@ -64,7 +64,7 @@
     
             return <Globe
                 ref={globeEl}
-                globeImageUrl="./kintsugi.jpg"
+                globeImageUrl="./kintsugi.jpeg"
                 backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
                 
                 pointsData={cities}
@@ -72,7 +72,7 @@
                 pointLng="lon"
                 pointAltitude={0.1}
                 pointRadius={0.138}
-                pointColor={d => d["city-status"] ? d["city-status"] : "#ffffff"}
+                pointColor={d => d["city-status"] ? "#70676A" : "#655384"}
                 pointResolution={24}
                 pointLabel={getTooltip}
 
@@ -90,7 +90,7 @@
 
                 ringsData={[shieldRing]}
                 ringAltitude={0.1}
-                ringColor={() => "#75FA70"}
+                ringColor={() => "#3800e9"}
                 ringMaxRadius={180}
                 ringPropagationSpeed={10}
                 ringRepeatPeriod={800}
@@ -105,7 +105,7 @@
                 pathColor={path => path.properties.color}
                 pathDashLength={0.1}
                 pathDashGap={0.008}
-                pathColor={() => "rgb(220, 220, 220)"}
+                pathColor={() => "#485182"}
                 pathDashAnimateTime={12000}
             />;
         };
