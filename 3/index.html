@@ -72,7 +72,7 @@
                 pointLng="lon"
                 pointAltitude={0.1}
                 pointRadius={0.138}
-                pointColor={d => d["city-status"] ? "#70676A" : "#655384"}
+                pointColor={d => d["city-status"] ? "rgba(1, 223, 150, 0.75)" : "rgba(255, 255, 255, 0.5)"}
                 pointResolution={24}
                 pointLabel={getTooltip}
 
@@ -90,7 +90,7 @@
 
                 ringsData={[shieldRing]}
                 ringAltitude={0.1}
-                ringColor={() => "#3800e9"}
+                ringColor={() => "#01df96"}
                 ringMaxRadius={180}
                 ringPropagationSpeed={10}
                 ringRepeatPeriod={800}
@@ -105,7 +105,7 @@
                 pathColor={path => path.properties.color}
                 pathDashLength={0.1}
                 pathDashGap={0.008}
-                pathColor={() => "#485182"}
+                pathColor={() => "#30846d"}
                 pathDashAnimateTime={12000}
             />;
         };
