@@ -52,17 +52,18 @@
                 // Active nodes: 4a5ecf05644a4a4cf91674d704930528 + #01df96
                 // Online nodes: 2f29f043c8fcbcbe7593030e52e7e428 + #3309f0 at 75% opacity
                 // Claimed nodes: b01868103ba80e9892273b7f968eaa8d + #ffffff at 50% opacity
+                let colour = "";
                 switch(cityStatus) {
                     case "4a5ecf05644a4a4cf91674d704930528":
-                        return "#01df96";
+                        colour = "#01df96";
                     case "2f29f043c8fcbcbe7593030e52e7e428"
-                        return "rgb(51 9 240 / 75%)";
+                        colour = "rgb(51 9 240 / 75%)";
                     case "b01868103ba80e9892273b7f968eaa8d":
-                        return "#ffffff";
+                        colour = "#ffffff";
                     default: 
-                        return "#ffffff";
+                        colour = "#ffffff";
                 }
-
+                return colour;
             };
 
             useEffect(() => {
