@@ -71,7 +71,7 @@
 
             useEffect(() => {
             // from https://github.com/telegeography/www.submarinecablemap.com
-            fetch('//raw.githubusercontent.com/telegeography/www.submarinecablemap.com/master/web/public/api/v3/cable/cable-geo.json')
+            fetch('cable-geo.json')
                 .then(r =>r.json())
                 .then(cablesGeo => {
                 let cablePaths = [];
@@ -126,7 +126,7 @@
                 pathColor={path => path.properties.color}
                 pathDashLength={0.1}
                 pathDashGap={0.008}
-                pathColor={() => "#30846d"}
+                pathColor={() => "rgb(48 132 109 / 75%)"}
                 pathDashAnimateTime={12000}
             />;
         };
