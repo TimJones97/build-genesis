@@ -48,9 +48,30 @@
             // Paths test
             const [cablePaths, setCablePaths] = useState([]);
 
+            const determineCityColour = (cityStatus) => {
+                // Active nodes: 4a5ecf05644a4a4cf91674d704930528 + #01df96
+                // Online nodes: 2f29f043c8fcbcbe7593030e52e7e428 + #3309f0 at 75% opacity
+                // Claimed nodes: b01868103ba80e9892273b7f968eaa8d + #ffffff at 50% opacity
+                let colour = "";
+                switch(cityStatus) {
+                    case "4a5ecf05644a4a4cf91674d704930528":
+                        colour = "#01df96";
+                        break;
+                    case "2f29f043c8fcbcbe7593030e52e7e428":
+                        colour = "rgb(51 9 240 / 75%)";
+                        break;
+                    case "b01868103ba80e9892273b7f968eaa8d":
+                        colour = "#ffffff";
+                        break;
+                    default: 
+                        colour = "#ffffff";
+                }
+                return colour;
+            };
+
             useEffect(() => {
             // from https://github.com/telegeography/www.submarinecablemap.com
-            fetch('//raw.githubusercontent.com/telegeography/www.submarinecablemap.com/master/web/public/api/v3/cable/cable-geo.json')
+            fetch('cable-geo.json')
                 .then(r =>r.json())
                 .then(cablesGeo => {
                 let cablePaths = [];
@@ -64,15 +85,15 @@
     
             return <Globe
                 ref={globeEl}
-                globeImageUrl="./globe.jpg"
+                globeImageUrl="./kintsugi.jpg"
                 backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
-                
+
                 pointsData={cities}
                 pointLat="lat"
                 pointLng="lon"
                 pointAltitude={0.1}
                 pointRadius={0.138}
-                pointColor={d => d["city-status"] ? d["city-status"] : "#ffffff"}
+                pointColor={d => determineCityColour(d["city-status-dropdown"])}
                 pointResolution={24}
                 pointLabel={getTooltip}
 
@@ -90,7 +111,7 @@
 
                 ringsData={[shieldRing]}
                 ringAltitude={0.1}
-                ringColor={() => "#75FA70"}
+                ringColor={() => "#01df96"}
                 ringMaxRadius={180}
                 ringPropagationSpeed={10}
                 ringRepeatPeriod={800}
@@ -102,11 +123,9 @@
                 pathPoints="coords"
                 pathPointLat={p => p[1]}
                 pathPointLng={p => p[0]}
-                pathColor={path => path.properties.color}
-                pathLabel={path => path.properties.name}
                 pathDashLength={0.1}
                 pathDashGap={0.008}
-                pathColor={() => "#ffffff"}
+                pathColor={() => "rgb(48 132 109 / 50%)"}
                 pathDashAnimateTime={12000}
             />;
         };
