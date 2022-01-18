@@ -1,13 +1,19 @@
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8; IE=EDGE">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             margin: 0;
         }
 
         #container {
-            position: relative;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
             width: calc(100vh - 20px);
-            margin: 0 auto;
         }
 
         #passport-text {
@@ -19,17 +25,24 @@
             color: #fff;
             height: max-content;
             font-family: 'Fira Code', monospace;
-            font-weight: 700;
+            font-weight: 300;
             font-size: 18px
         }
+
         #passport-text span {
             display: block;
             margin-bottom: 8px;
         }
+
+        @media only screen and (max-width: 767px) {
+            #passport-text {
+                font-size: 14px
+            }
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
 
     <script src="//unpkg.com/react/umd/react.production.min.js"></script>
     <script src="//unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
@@ -180,3 +193,5 @@
         );
   </script>
 </body>
+
+</html>
