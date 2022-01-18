@@ -3,7 +3,33 @@
         body {
             margin: 0;
         }
+
+        #container {
+            position: relative;
+            width: calc(100vh - 20px);
+            margin: 0 auto;
+        }
+
+        #passport-text {
+            position: absolute;
+            bottom: 80px;
+            left: 20px;
+            width: 320px;
+            /* background-color: #ffffff; */
+            color: #fff;
+            height: max-content;
+            font-family: 'Fira Code', monospace;
+            font-weight: 700;
+            font-size: 18px
+        }
+        #passport-text span {
+            display: block;
+            margin-bottom: 8px;
+        }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap" rel="stylesheet">
 
     <script src="//unpkg.com/react/umd/react.production.min.js"></script>
     <script src="//unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
@@ -18,7 +44,25 @@
 
 <body>
     <div id="globeViz"></div>
-
+    <div id="container">
+        <div id="passport-text">
+            <span>
+                Passport Type: Genesis
+            </span>
+            <span>
+                Issuance: 1/1
+            </span>
+            <span>
+                Token ID: 12345
+            </span>
+            <span>
+                Date Issued: 2/22/2022
+            </span>
+            <span>
+                Date Expired: ∞
+            </span>
+        </div>
+    </div>
     <script type="text/jsx">
         const { useState, useEffect, useRef } = React;
         const shieldRing = { lat: 90, lng: 0 };
@@ -41,8 +85,8 @@
 
             useEffect(() => {
                 // Auto-rotate
-                globeEl.current.controls().autoRotate = true;
-                globeEl.current.controls().autoRotateSpeed = 0.6;
+                //globeEl.current.controls().autoRotate = true;
+                //globeEl.current.controls().autoRotateSpeed = 0.6;
             }, []);
 
             // Paths test
